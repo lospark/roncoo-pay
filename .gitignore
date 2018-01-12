@@ -1,0 +1,29 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# git
+.git
+
+# idea tool
+.idea
+*.iml
+.project
+.settings
+*.classpath
+META-INF 
+*.MF
+.mymetadata
+
+# maven
+target
