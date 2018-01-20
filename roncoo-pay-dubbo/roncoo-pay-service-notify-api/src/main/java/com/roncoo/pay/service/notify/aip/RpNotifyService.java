@@ -26,6 +26,26 @@ import com.roncoo.pay.service.notify.exceptions.NotifyBizException;
 
 
 public interface RpNotifyService {
+	
+    /**
+     * 创建消息通知
+     * @param rpNotifyRecord
+     */
+    public long createNotifyRecord(RpNotifyRecord rpNotifyRecord) throws NotifyBizException;
+
+    /**
+     * 修改消息通知
+     * @param rpNotifyRecord
+     */
+    public void updateNotifyRecord(RpNotifyRecord rpNotifyRecord) throws NotifyBizException;
+
+    /**
+     * 创建消息通知记录
+     * @param rpNotifyRecordLog
+     * @return
+     */
+    public long createNotifyRecordLog(RpNotifyRecordLog rpNotifyRecordLog) throws NotifyBizException;
+    
 
     /**
      * 发送消息通知
@@ -52,25 +72,10 @@ public interface RpNotifyService {
      */
     public RpNotifyRecord getNotifyByMerchantNoAndMerchantOrderNoAndNotifyType(String merchantNo , String merchantOrderNo , String notifyType) throws NotifyBizException;
 
-
-    public PageBean<RpNotifyRecord>  queryNotifyRecordListPage(PageParam pageParam , Map<String, Object> paramMap) throws NotifyBizException;
     /**
-     * 创建消息通知
-     * @param rpNotifyRecord
+     * 按条件分页查询通知记录.
      */
-    public long createNotifyRecord(RpNotifyRecord rpNotifyRecord) throws NotifyBizException;
+    public PageBean<RpNotifyRecord> queryNotifyRecordListPage(PageParam pageParam , Map<String, Object> paramMap) throws NotifyBizException;
 
-    /**
-     * 修改消息通知
-     * @param rpNotifyRecord
-     */
-    public void updateNotifyRecord(RpNotifyRecord rpNotifyRecord) throws NotifyBizException;
-
-    /**
-     * 创建消息通知记录
-     * @param rpNotifyRecordLog
-     * @return
-     */
-    public long createNotifyRecordLog(RpNotifyRecordLog rpNotifyRecordLog) throws NotifyBizException;
 
 }

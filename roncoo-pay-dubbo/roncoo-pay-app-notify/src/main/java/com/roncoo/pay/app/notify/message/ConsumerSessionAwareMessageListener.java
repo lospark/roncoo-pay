@@ -82,7 +82,7 @@ public class ConsumerSessionAwareMessageListener  implements MessageListener {
                 notifyRecord = rpNotifyService.getNotifyByMerchantNoAndMerchantOrderNoAndNotifyType(notifyRecord.getMerchantNo(), notifyRecord.getMerchantOrderNo(), notifyRecord.getNotifyType());
 
                 // 添加到通知队列
-                notifyQueue.addElementToList(notifyRecord);
+                notifyQueue.addToNotifyTaskDelayQueue(notifyRecord);
             }  catch (BizException e) {
                 log.error("BizException :", e);
             } catch (Exception e) {

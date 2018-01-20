@@ -48,6 +48,40 @@ public class RpNotifyServiceImpl implements RpNotifyService {
 
     @Autowired
     private RpNotifyRecordLogDao rpNotifyRecordLogDao;
+    
+    /**
+     * 创建消息通知
+     *
+     * @param rpNotifyRecord
+     */
+    @Override
+    public long createNotifyRecord(RpNotifyRecord rpNotifyRecord) {
+        return rpNotifyRecordDao.insert(rpNotifyRecord);
+    }
+
+    /**
+     * 修改消息通知
+     *
+     * @param rpNotifyRecord
+     */
+    @Override
+    public void updateNotifyRecord(RpNotifyRecord rpNotifyRecord) {
+        rpNotifyRecordDao.update(rpNotifyRecord);
+    }
+
+    /**
+     * 创建消息通知记录
+     *
+     * @param rpNotifyRecordLog
+     * @return
+     */
+    @Override
+    public long createNotifyRecordLog(RpNotifyRecordLog rpNotifyRecordLog) {
+        return rpNotifyRecordLogDao.insert(rpNotifyRecordLog);
+    }
+    
+    
+    
     /**
      * 发送消息通知
      *
@@ -101,41 +135,13 @@ public class RpNotifyServiceImpl implements RpNotifyService {
         return rpNotifyRecordDao.getNotifyByMerchantNoAndMerchantOrderNoAndNotifyType(merchantNo,merchantOrderNo,notifyType);
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public PageBean<RpNotifyRecord> queryNotifyRecordListPage(PageParam pageParam, Map<String, Object> paramMap) {
         return rpNotifyRecordDao.listPage(pageParam,paramMap);
     }
 
-    /**
-     * 创建消息通知
-     *
-     * @param rpNotifyRecord
-     */
-    @Override
-    public long createNotifyRecord(RpNotifyRecord rpNotifyRecord) {
-        return rpNotifyRecordDao.insert(rpNotifyRecord);
-    }
 
-    /**
-     * 修改消息通知
-     *
-     * @param rpNotifyRecord
-     */
-    @Override
-    public void updateNotifyRecord(RpNotifyRecord rpNotifyRecord) {
-        rpNotifyRecordDao.update(rpNotifyRecord);
-    }
-
-    /**
-     * 创建消息通知记录
-     *
-     * @param rpNotifyRecordLog
-     * @return
-     */
-    @Override
-    public long createNotifyRecordLog(RpNotifyRecordLog rpNotifyRecordLog) {
-        return rpNotifyRecordLogDao.insert(rpNotifyRecordLog);
-    }
 
 
 }
