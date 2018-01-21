@@ -30,6 +30,7 @@
 		<module>roncoo-pay-service-notify-api</module>
 		<module>roncoo-pay-service-trade-api</module>
 		<module>roncoo-pay-service-user-api</module>
+		<module>roncoo-pay-service-point-api</module>
 		
 		<!-- service -->
 		<module>roncoo-pay-service-account</module>
@@ -38,6 +39,7 @@
 		<module>roncoo-pay-service-notify</module>
 		<module>roncoo-pay-service-trade</module>
 		<module>roncoo-pay-service-user</module>
+		<module>roncoo-pay-service-point</module>
 		
 		<!-- app -->
 		<module>roncoo-pay-app-message</module>
